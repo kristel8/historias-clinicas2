@@ -1,0 +1,13 @@
+@import 'variables';
+
+.td-container {
+  width: 100%;
+  background-color: rgb(241, 241, 241);
+  overflow-y: scroll;
+ // height: calc(100vh - 50px);
+}
+
+.td-sidebar {
+  //background-color: $primaryColor;
+  //height: calc(100vh - 50px);
+}

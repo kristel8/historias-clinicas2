@@ -1,0 +1,23 @@
+<h3>Historias clinicas</h3>
+<p-table [value]="historias">
+    <ng-template pTemplate="header">
+        <tr>
+             <th  *ngFor="let col of cols"> <i [class]="col.icon"></i>
+                {{col.header}}
+            </th>
+            <th style="text-align: center; justify-content: center;"> <i class="pi pi-cog"></i> Opciones</th>
+
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-data>
+        <tr>
+            <td *ngFor="let col of cols">
+                {{data[col.field]}}
+            </td>
+            <td class="buttons-table">
+                <button pButton type="button" iconPos="left" icon="pi pi-search" label="Ver" (click)="ver(data)"></button>
+                <button class="p-button-danger" pButton type="button" iconPos="left" icon="pi pi-times" label="Eliminar" (click)="eliminar(data)"></button>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>

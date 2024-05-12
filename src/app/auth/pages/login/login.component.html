@@ -1,0 +1,33 @@
+<section class="login">
+  <form (ngSubmit)="iniciarSesion()" [formGroup]="loginForm">
+  <h2>INICIAR SESIÓN</h2>
+   <div>
+     <img src="/assets/img/logosj.png" width="70px" height="70px" alt="">
+   </div>
+    <div class="form">
+
+       <h4  class="form-text"> <i class="fa-solid fa-user icon"></i> Usuario:</h4>
+      <input placeholder="Ingrese datos" id="usuario" type="text" formControlName="usuario" pInputText />
+      <div *ngIf="usuario?.invalid && (usuario?.dirty || usuario?.touched)">
+        <small *ngIf="usuario?.errors?.['required']" class="p-error">Usuario es obligatorio</small>
+      </div>
+    </div>
+    <div class="form">
+      <h4 class="form-text"> <i class="fa-solid fa-lock icon"></i> Contraseña:</h4>
+      <input placeholder="Ingrese datos" id="contrasena" type="password" formControlName="contrasena" pInputText />
+      <div *ngIf="contrasena?.invalid && (contrasena?.dirty || contrasena?.touched)">
+        <small *ngIf="contrasena?.errors?.['required']" class="p-error">Contraseña es obligatorio</small>
+      </div>
+    </div>
+    <br>
+  <button class="boton2"
+  pButton
+  type="submit"
+  icon="pi pi-sign-in"
+  iconPos="right"
+  label="Acceder"
+  (click)="iniciarSesion()"
+  [disabled]="!loginForm.valid"
+></button>
+  </form>
+</section>

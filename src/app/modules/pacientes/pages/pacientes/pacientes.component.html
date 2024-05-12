@@ -1,0 +1,46 @@
+<h2>Busqueda de pacientes</h2>
+<br>
+<form [formGroup]="pacienteForm">
+  <div class="form-group">
+    <div class="form">
+      <span>DNI</span>
+      <input type="text" pInputText formControlName="dni" maxlength="8" (change)="disableForm()" numbersOnly />
+    </div>
+    <div class="form">
+      <span>Apellido</span>
+      <input type="text" pInputText formControlName="apellidoPaterno" (change)="disableForm()" />
+    </div>
+  </div>
+</form>
+<div class="buttons">
+  <button pButton type="button" iconPos="left" label="Buscar" icon="pi pi-search" (click)="buscar()"
+    [loading]="isLoading"></button>
+  <button class="p-button-danger" pButton type="button" iconPos="left" label="Limpiar" icon="pi pi-check"
+    (click)="limpiar()" [disabled]="isLoading"></button>
+</div>
+<hr>
+<br>
+<h3>Resultados</h3>
+<p-table [value]="pacientes" *ngIf="pacientes.length > 0">
+  <ng-template pTemplate="header">
+    <tr>
+      <th *ngFor="let col of cols"> <i [class]="col.icon"></i>
+        {{col.header}}
+      </th>
+      <th style="text-align: center; justify-content: center;"> <i class="pi pi-cog"></i> Opciones</th>
+
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-data>
+    <tr>
+      <td *ngFor="let col of cols">
+        {{data[col.field]}}
+      </td>
+      <td class="buttons-table">
+        <button pButton type="button" iconPos="left" icon="pi pi-search" label="Ver" (click)="ver(data)"></button>
+        <button class="p-button-danger" pButton type="button" iconPos="left" icon="pi pi-trash" label="Eliminar"
+          (click)="eliminar(data)"></button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

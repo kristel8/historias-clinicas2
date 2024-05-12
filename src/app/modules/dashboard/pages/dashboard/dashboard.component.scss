@@ -1,0 +1,27 @@
+.boton3{
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-right: 20px;
+}
+
+.boton3:hover{
+    background-color: #4581D7;
+}
+
+
+.boton4{
+    background-color: #EC1713;
+    border: 1px solid #EC1713;
+}
+
+.boton4:hover{
+    border: 1px solid #D03B38;
+    transition: 0.5s;
+    background-color: #D03B38;
+}
+
+.buttons-table {
+  display: flex;
+  column-gap: 15px;
+  justify-content: center;
+}

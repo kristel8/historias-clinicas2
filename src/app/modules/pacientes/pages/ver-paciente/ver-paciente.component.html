@@ -1,0 +1,236 @@
+<h2>Paciente: {{pacienteNombre}}</h2>
+
+<hr>
+<form [formGroup]="historiaClinicaForm">
+  <div formGroupName="pacienteForm">
+    <h4>Datos de la historia clinica</h4>
+    <section class="form-group">
+      <div class="form">
+        <span>Fecha inscrito</span>
+        <input type="text" formControlName="fechaInscrito" pInputText />
+        <div></div>
+        <small
+          *ngIf="pacienteFormCtrl.get('fechaInscrito')?.invalid && (pacienteFormCtrl.get('fechaInscrito')?.touched)"
+          class="p-error">El campo es obligatorio</small>
+      </div>
+      <div class="form">
+        <span>DNI</span>
+        <input type="text" formControlName="dni" pInputText />
+        <div></div>
+        <small *ngIf="pacienteFormCtrl.get('dni')?.invalid && (pacienteFormCtrl.get('dni')?.touched)" class="p-error">El
+          campo es obligatorio</small>
+      </div>
+      <div class="form">
+        <span>ID</span>
+        <input type="text" formControlName="id" pInputText />
+        <div></div>
+        <small *ngIf="pacienteFormCtrl.get('id')?.invalid && (pacienteFormCtrl.get('id')?.touched)" class="p-error">El
+          campo es obligatorio</small>
+      </div>
+    </section>
+    <br>
+    <h4>Datos del paciente</h4>
+    <section class="form-group">
+      <div class="form">
+        <span>Apellido Paterno</span>
+        <input type="text" formControlName="apellidoPaterno" pInputText />
+        <div></div>
+        <small
+          *ngIf="pacienteFormCtrl.get('apellidoPaterno')?.invalid && (pacienteFormCtrl.get('apellidoPaterno')?.touched)"
+          class="p-error">El campo es obligatorio</small>
+      </div>
+      <div class="form">
+        <span>Sexo</span>
+        <input type="text" formControlName="genero" pInputText />
+        <div></div>
+        <small *ngIf="pacienteFormCtrl.get('genero')?.invalid && (pacienteFormCtrl.get('genero')?.touched)"
+          class="p-error">El campo es obligatorio</small>
+      </div>
+      <div class="form">
+        <span>Edad</span>
+        <input type="text" formControlName="edad" pInputText />
+        <div></div>
+        <small *ngIf="pacienteFormCtrl.get('edad')?.invalid && (pacienteFormCtrl.get('edad')?.touched)"
+          class="p-error">El campo es obligatorio</small>
+      </div>
+    </section>
+
+    <section class="form-group">
+      <div class="form">
+        <span>Apellido Materno</span>
+        <input type="text" formControlName="apellidoMaterno" pInputText />
+        <div></div>
+        <small
+          *ngIf="pacienteFormCtrl.get('apellidoMaterno')?.invalid && (pacienteFormCtrl.get('apellidoMaterno')?.touched)"
+          class="p-error">El campo es obligatorio</small>
+      </div>
+      <div class="form">
+        <span>Etnia</span>
+        <input type="text" formControlName="etnia" pInputText />
+        <div></div>
+        <small *ngIf="pacienteFormCtrl.get('etnia')?.invalid && (pacienteFormCtrl.get('etnia')?.touched)"
+          class="p-error">El campo es obligatorio</small>
+      </div>
+      <div class="form">
+        <span>Correo</span>
+        <input type="text" formControlName="correo" pInputText />
+        <div></div>
+        <small *ngIf="pacienteFormCtrl.get('correo')?.invalid && (pacienteFormCtrl.get('correo')?.touched)"
+          class="p-error">El campo es obligatorio</small>
+      </div>
+    </section>
+
+    <section class="form-group">
+      <div class="form">
+        <span>Nombres</span>
+        <input type="text" formControlName="nombres" pInputText />
+        <div></div>
+        <small *ngIf="pacienteFormCtrl.get('nombres')?.invalid && (pacienteFormCtrl.get('nombres')?.touched)"
+          class="p-error">El campo es obligatorio</small>
+      </div>
+      <div class="form">
+        <span>Estado civil</span>
+        <input type="text" formControlName="estadoCivil" pInputText />
+        <div></div>
+        <small *ngIf="pacienteFormCtrl.get('estadoCivil')?.invalid && (pacienteFormCtrl.get('estadoCivil')?.touched)"
+          class="p-error">El campo es obligatorio</small>
+      </div>
+      <div class="form">
+        <span>Observaciones</span>
+        <input type="text" formControlName="observaciones" pInputText />
+        <div></div>
+        <small
+          *ngIf="pacienteFormCtrl.get('observaciones')?.invalid && (pacienteFormCtrl.get('observaciones')?.touched)"
+          class="p-error">El campo es obligatorio</small>
+      </div>
+    </section>
+  </div>
+  <br>
+  <div formGroupName="atencedenteForm">
+    <h4>Datos de antecedentes</h4>
+    <section class="form-group-area">
+      <div class="form">
+        <span>Enfermedades previas</span>
+        <textarea formControlName="enfermedadesPrevias" pInputTextarea></textarea>
+        <small
+          *ngIf="atencedenteFormCtrl.get('enfermedadesPrevias')?.invalid && (atencedenteFormCtrl.get('enfermedadesPrevias')?.touched)"
+          class="p-error">El campo es obligatorio</small>
+      </div>
+      <div class="form">
+        <span>Enfermedades actuales</span>
+        <textarea formControlName="enfermedadesActuales" pInputTextarea></textarea>
+        <small
+          *ngIf="atencedenteFormCtrl.get('enfermedadesActuales')?.invalid && (atencedenteFormCtrl.get('enfermedadesActuales')?.touched)"
+          class="p-error">El campo es obligatorio</small>
+      </div>
+      <div class="form">
+        <span>Alergia medicamentos</span>
+        <textarea formControlName="alergiasMedicamentos" pInputTextarea></textarea>
+        <small
+          *ngIf="atencedenteFormCtrl.get('alergiasMedicamentos')?.invalid && (atencedenteFormCtrl.get('alergiasMedicamentos')?.touched)"
+          class="p-error">El campo es obligatorio</small>
+      </div>
+    </section>
+
+    <section class="form-group-area">
+      <div class="form">
+        <span>Lugar de nacimiento</span>
+        <input type="text" formControlName="lugarNacimiento" pInputText />
+        <small
+          *ngIf="atencedenteFormCtrl.get('lugarNacimiento')?.invalid && (atencedenteFormCtrl.get('lugarNacimiento')?.touched)"
+          class="p-error">El campo es obligatorio</small>
+      </div>
+      <div class="form">
+        <span>Cirugias</span>
+        <textarea formControlName="cirugias" pInputTextarea></textarea>
+        <small *ngIf="atencedenteFormCtrl.get('cirugias')?.invalid && (atencedenteFormCtrl.get('cirugias')?.touched)"
+          class="p-error">El campo es obligatorio</small>
+      </div>
+    </section>
+  </div>
+  <br>
+  <div formGroupName="examenForm">
+    <h4>Datos de exámen físico</h4>
+    <section class="form-group-area">
+      <div class="form">
+        <span>Examen general</span>
+        <textarea formControlName="examenGeneral" pInputTextarea></textarea>
+        <small *ngIf="examenFormCtrl.get('examenGeneral')?.invalid && (examenFormCtrl.get('examenGeneral')?.touched)"
+          class="p-error">El campo es obligatorio</small>
+      </div>
+      <div class="form">
+        <span>Estado de piel</span>
+        <textarea formControlName="estadoPiel" pInputTextarea></textarea>
+        <small *ngIf="examenFormCtrl.get('estadoPiel')?.invalid && (examenFormCtrl.get('estadoPiel')?.touched)"
+          class="p-error">El campo es obligatorio</small>
+      </div>
+    </section>
+
+    <section class="form-group">
+      <div class="form">
+        <span>Nutrición</span>
+        <input type="text" formControlName="nutricion" pInputText />
+        <div></div>
+        <small *ngIf="examenFormCtrl.get('nutricion')?.invalid && (examenFormCtrl.get('nutricion')?.touched)"
+          class="p-error">El campo es obligatorio</small>
+      </div>
+      <div class="form">
+        <span>Estado oseo</span>
+        <input type="text" formControlName="estadoOsea" pInputText />
+        <div></div>
+        <small *ngIf="examenFormCtrl.get('estadoOsea')?.invalid && (examenFormCtrl.get('estadoOsea')?.touched)"
+          class="p-error">El campo es obligatorio</small>
+      </div>
+    </section>
+
+    <section class="form-group">
+      <div class="form">
+        <span>Hidratación</span>
+        <input type="text" formControlName="hidratacion" pInputText />
+        <div></div>
+        <small *ngIf="examenFormCtrl.get('hidratacion')?.invalid && (examenFormCtrl.get('hidratacion')?.touched)"
+          class="p-error">El campo es obligatorio</small>
+      </div>
+
+      <div class="form">
+        <span>Estado muscular</span>
+        <input type="text" formControlName="estadoMuscular" pInputText />
+        <div></div>
+        <small *ngIf="examenFormCtrl.get('estadoMuscular')?.invalid && (examenFormCtrl.get('estadoMuscular')?.touched)"
+          class="p-error">El campo es obligatorio</small>
+      </div>
+    </section>
+
+    <section class="form-group">
+      <div class="form">
+        <span>Articulaciones</span>
+        <input type="text" formControlName="articulaciones" pInputText />
+        <div></div>
+        <small *ngIf="examenFormCtrl.get('articulaciones')?.invalid && (examenFormCtrl.get('articulaciones')?.touched)"
+          class="p-error">El campo es obligatorio</small>
+      </div>
+      <div class="form">
+        <span>Torax y pulmones</span>
+        <input type="text" formControlName="toraxYPulmones" pInputText />
+        <div></div>
+        <small
+          *ngIf="pacienteFormCtrl.get('toraxYPulmones')?.invalid && (pacienteFormCtrl.get('toraxYPulmones')?.touched)"
+          class="p-error">El campo es obligatorio</small>
+      </div>
+    </section>
+    <section class="form-group-area">
+      <div class="form">
+        <span>Estado general</span>
+        <textarea formControlName="estadoGeneral" pInputTextarea></textarea>
+        <div></div>
+        <small *ngIf="examenFormCtrl.get('estadoGeneral')?.invalid && (examenFormCtrl.get('estadoGeneral')?.touched)"
+          class="p-error">El campo es obligatorio</small>
+      </div>
+    </section>
+  </div>
+  <br>
+  <div class="buttons">
+    <button pButton type="button" iconPos="left" icon="pi pi-pencil"  [label]="buttonName" (click)="editarYGuardar()" [loading]="isLoading"></button>
+    <button pButton type="button" iconPos="left" icon="pi pi-arrow-left"  label="Volver atrás" (click)="volver()" class="p-button-danger" [disabled]="isLoading"></button>
+  </div>
+</form>
