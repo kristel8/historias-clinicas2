@@ -2,6 +2,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ChatService } from '../../services/chat.service';
 
 interface ChatOption {
+  img: string;
   title: string;
   description: string;
   questions: ChatQuestion[];
@@ -32,6 +33,7 @@ export class ChatComponent {
 
   chatOptions: ChatOption[] = [
     {
+      img: 'icon1',
       title: 'Acceso y autenticación',
       description: 'Iniciar sesión / recuperar contraseña',
       questions: [
@@ -41,6 +43,7 @@ export class ChatComponent {
       ]
     },
     {
+      img: 'icon2',
       title: 'Consulta de información',
       description: 'Última consulta / diagnóstico',
       questions: [
@@ -51,6 +54,7 @@ export class ChatComponent {
       ]
     },
     {
+      img: 'icon3',
       title: 'Gestión de citas médicas',
       description: 'Agenda citas / consulta disponibilidad',
       questions: [
@@ -60,6 +64,7 @@ export class ChatComponent {
       ]
     },
     {
+      img: 'icon4',
       title: 'Soporte y ayuda',
       description: 'Contactar con soporte / información médica',
       questions: [

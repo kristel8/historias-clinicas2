@@ -11,12 +11,12 @@
   </div>
 
   <div class="chat-body" #chatBody>
-    <p>¡Hola! Bienvenido, soy tu asistente virtual, <br> ¿En qué puedo ayudarte?</p>
+    <p class="title"><strong>¡Hola! Bienvenido, soy tu asistente virtual, <br> ¿En qué puedo ayudarte?</strong></p>
     <br>
     <ng-container *ngIf="!selectedOption; else questionsTemplate">
       <ul class="chat-options">
         <li *ngFor="let option of chatOptions" (click)="selectOption(option)">
-          <div class="icon">📄</div>
+          <div class="icon"><img [src]="'assets/img/'+option.img+'.svg'"></div>
           <div>
             <strong>{{ option.title }}</strong>
             <p>{{ option.description }}</p>
@@ -30,7 +30,7 @@
         <button class="selected-btn">{{ selectedOption?.title }}</button>
         <div class="avatar">YO</div>
       </div>
-      <p>Por favor, seleccione una pregunta:</p>
+      <p><strong>Por favor, seleccione una pregunta:</strong></p>
       <ul class="question-list">
         <li *ngFor="let question of selectedOption?.questions" (click)="selectQuestion(question)">
           {{ question.question }}
