@@ -1,0 +1,71 @@
+<div class="chat-button" (click)="openChat()">
+  <img src="assets/img/chat.svg" alt="Chat">
+  <span>Chat</span>
+</div>
+
+<div class="chat-window" *ngIf="isChatOpen">
+  <div class="chat-header">
+    <button class="back-btn" (click)="goBack()" *ngIf="view !== 'home'">←</button>
+    <span>Asistente virtual</span>
+    <button class="close-btn" (click)="closeChat()">×</button>
+  </div>
+
+  <div class="chat-body" #chatBody>
+    <p>¡Hola! Bienvenido, soy tu asistente virtual, <br> ¿En qué puedo ayudarte?</p>
+    <br>
+    <ng-container *ngIf="!selectedOption; else questionsTemplate">
+      <ul class="chat-options">
+        <li *ngFor="let option of chatOptions" (click)="selectOption(option)">
+          <div class="icon">📄</div>
+          <div>
+            <strong>{{ option.title }}</strong>
+            <p>{{ option.description }}</p>
+          </div>
+        </li>
+      </ul>
+    </ng-container>
+
+    <ng-template #questionsTemplate>
+      <div class="selected-option">
+        <button class="selected-btn">{{ selectedOption?.title }}</button>
+        <div class="avatar">YO</div>
+      </div>
+      <p>Por favor, seleccione una pregunta:</p>
+      <ul class="question-list">
+        <li *ngFor="let question of selectedOption?.questions" (click)="selectQuestion(question)">
+          {{ question.question }}
+        </li>
+      </ul>
+    </ng-template>
+
+    <div *ngIf="selectedQuestion" class="chat-response">
+      <div class="message-container user">
+        <div class="avatar user">YO</div>
+        <div class="message">{{ selectedQuestion.question }}</div>
+      </div>
+      <div class="bot-response" *ngIf="!isLoading2">
+        <div class="avatar bot">🤖</div>
+        <div class="message">{{ selectedQuestion.answer }}</div>
+      </div>
+    </div>
+
+    <div class="chat-response">
+
+      <div *ngFor="let message of messages"
+        [ngClass]="{ 'message-container user': message.sender === 'user', 'bot-response': message.sender === 'bot' }">
+        <div [ngClass]="message.sender === 'user' ? 'avatar user' : 'avatar bot'">{{ message.sender === 'user' ? 'YO' :
+          '🤖' }}</div>
+        <div class="message">{{ message.text }}</div>
+      </div>
+    </div>
+
+
+    <div *ngIf="isLoading || isLoading2" class="loader">Cargando respuesta...</div>
+  </div>
+
+  <div class="chat-footer">
+    <input pInputText type="text" placeholder="Escribe un mensaje" [(ngModel)]="userMessage"
+      (keydown.enter)="sendMessage()" />
+    <button (click)="sendMessage()">▶️</button>
+  </div>
+</div>

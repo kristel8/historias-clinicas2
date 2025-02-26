@@ -25,7 +25,7 @@ import { MessageService } from 'primeng/api';
     ToastModule,
     BrowserAnimationsModule
   ],
-  providers: [ MessageService ],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

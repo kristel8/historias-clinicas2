@@ -1,25 +1,27 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { LayoutComponent } from './components/layout/layout.component';
-import { TableComponent } from './components/table/table/table.component';
-import { TableModule } from 'primeng/table';
-import { InputTextModule } from 'primeng/inputtext';
-import { ButtonComponent } from './components/button/button.component';
-import { ButtonModule } from 'primeng/button';
-import { StyleButtonDirective } from './directives/style-button.directive';
-import { NumbersOnlyDirective } from './directives/numbers-only.directive';
-import { SidebarTemplateComponent } from './components/sidebar-template/sidebar-template.component';
-import { NavbarTemplateComponent } from './components/navbar-template/navbar-template.component';
-import { FooterTemplateComponent } from './components/footer-template/footer-template.component';
-import { FlagsPipe } from './pipes/flags.pipe';
-import { StyleEstadoDirective } from './directives/style-estado.directive';
-import { TooltipModule } from 'primeng/tooltip';
-import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
+import { TableModule } from 'primeng/table';
+import { ToastModule } from 'primeng/toast';
+import { TooltipModule } from 'primeng/tooltip';
+import { ButtonComponent } from './components/button/button.component';
+import { ChatComponent } from './components/chat/chat.component';
+import { FooterTemplateComponent } from './components/footer-template/footer-template.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { LayoutComponent } from './components/layout/layout.component';
+import { NavbarTemplateComponent } from './components/navbar-template/navbar-template.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { SidebarTemplateComponent } from './components/sidebar-template/sidebar-template.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { TableComponent } from './components/table/table/table.component';
+import { NumbersOnlyDirective } from './directives/numbers-only.directive';
+import { StyleButtonDirective } from './directives/style-button.directive';
+import { StyleEstadoDirective } from './directives/style-estado.directive';
+import { FlagsPipe } from './pipes/flags.pipe';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import { MessageService } from 'primeng/api';
     LayoutComponent,
     TableComponent,
     ButtonComponent,
+    ChatComponent,
     StyleButtonDirective,
     NumbersOnlyDirective,
     SidebarTemplateComponent,
@@ -44,7 +47,9 @@ import { MessageService } from 'primeng/api';
     InputTextModule,
     ButtonModule,
     TooltipModule,
-    ToastModule
+    ToastModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
@@ -56,6 +61,7 @@ import { MessageService } from 'primeng/api';
     TableComponent,
     ButtonComponent,
     SidebarTemplateComponent,
+    ChatComponent,
     StyleButtonDirective,
     NumbersOnlyDirective
   ],
